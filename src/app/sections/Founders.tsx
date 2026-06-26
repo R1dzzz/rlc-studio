@@ -3,32 +3,14 @@
 import { motion } from "framer-motion";
 import ScrollReveal from "../components/ScrollReveal";
 import SectionEyebrow from "../components/SectionEyebrow";
+import { useLanguage } from "../i18n/LanguageContext";
 
-const founders = [
-  {
-    name: "FARID ALFIYANSAH",
-    role: "FOUNDER & CHIEF VISIONARY",
-    description:
-      "The architect of RLC's vision. Farid transformed a small gaming community into a studio with purpose, leading every step of the journey from concept to creation.",
-    initial: "F",
-  },
-  {
-    name: "HALIM",
-    role: "CO-FOUNDER & CREATIVE DIRECTOR",
-    description:
-      "A founding force behind RLC's creative identity. Halim brings the artistic sensibility and design thinking that shapes the studio's visual and experiential voice.",
-    initial: "H",
-  },
-  {
-    name: "FAUZAN YUSUF PRATAMA",
-    role: "CO-FOUNDER & TECHNICAL DIRECTOR",
-    description:
-      "The technical backbone of RLC's ambitions. Fauzan drives the engineering vision that turns creative dreams into playable realities.",
-    initial: "F",
-  },
-];
+const founderKeys = ["farid", "halim", "fauzan"] as const;
+const founderInitials = ["F", "H", "F"] as const;
 
 export default function Founders() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="founders"
@@ -41,18 +23,20 @@ export default function Founders() {
         {/* Header */}
         <div className="text-center mb-14 sm:mb-16">
           <ScrollReveal>
-            <SectionEyebrow text="THE TEAM" className="mb-4 block" />
+            <SectionEyebrow text={t.founders.eyebrow} className="mb-4 block" />
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <h2 className="text-display-xl text-white">MEET THE FOUNDERS</h2>
+            <h2 className="text-display-xl text-white">
+              {t.founders.headline}
+            </h2>
           </ScrollReveal>
         </div>
 
         {/* Founders Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {founders.map((founder, index) => (
-            <ScrollReveal key={founder.name} delay={0.15 * (index + 1)}>
+          {founderKeys.map((key, index) => (
+            <ScrollReveal key={key} delay={0.15 * (index + 1)}>
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3 }}
@@ -61,18 +45,18 @@ export default function Founders() {
                 {/* Avatar placeholder with initial */}
                 <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-6 rounded-full border border-hairline-dark/60 bg-white/[0.03] flex items-center justify-center group-hover:border-white/30 transition-colors duration-500">
                   <span className="text-display-lg text-white/20 group-hover:text-white/30 transition-colors duration-500">
-                    {founder.initial}
+                    {founderInitials[index]}
                   </span>
                 </div>
 
                 {/* Name */}
                 <h3 className="text-button-cap text-white mb-2 tracking-[1.17px]">
-                  {founder.name}
+                  {t.founders[key].name}
                 </h3>
 
                 {/* Role */}
                 <span className="text-micro-cap text-white/50 mb-5 block">
-                  {founder.role}
+                  {t.founders[key].role}
                 </span>
 
                 {/* Divider */}
@@ -80,7 +64,7 @@ export default function Founders() {
 
                 {/* Description */}
                 <p className="text-body-md text-white/50 leading-relaxed">
-                  {founder.description}
+                  {t.founders[key].description}
                 </p>
 
                 {/* Corner accent */}

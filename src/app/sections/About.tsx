@@ -2,8 +2,11 @@
 
 import ScrollReveal from "../components/ScrollReveal";
 import SectionEyebrow from "../components/SectionEyebrow";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export default function About() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="about"
@@ -17,7 +20,7 @@ export default function About() {
           {/* Left column — Label and headline */}
           <div className="lg:sticky lg:top-32">
             <ScrollReveal>
-              <SectionEyebrow text="OUR ORIGIN" className="mb-4 block" />
+              <SectionEyebrow text={t.about.eyebrow} className="mb-4 block" />
             </ScrollReveal>
 
             <ScrollReveal delay={0.1}>
@@ -34,7 +37,7 @@ export default function About() {
               <div className="flex items-center gap-4 mt-8">
                 <div className="w-12 h-px bg-white/30" />
                 <span className="text-micro-cap text-white/40">
-                  EST. OCTOBER 19, 2021
+                  {t.about.estDate}
                 </span>
               </div>
             </ScrollReveal>
@@ -43,28 +46,15 @@ export default function About() {
           {/* Right column — Story */}
           <div className="space-y-6">
             <ScrollReveal delay={0.15}>
-              <p className="text-body-lg text-white/70">
-                Every studio has an origin. Ours began on October 19, 2021 — not
-                in a boardroom, but in a simple chat group of friends who loved
-                to play Minecraft together. We called ourselves BigBearTeam.
-              </p>
+              <p className="text-body-lg text-white/70">{t.about.story1}</p>
             </ScrollReveal>
 
             <ScrollReveal delay={0.25}>
-              <p className="text-body-lg text-white/70">
-                What started as casual gaming sessions evolved into something
-                deeper. Conversations shifted from playing games to creating
-                them. Ideas turned into plans. A shared passion became a shared
-                vision.
-              </p>
+              <p className="text-body-lg text-white/70">{t.about.story2}</p>
             </ScrollReveal>
 
             <ScrollReveal delay={0.35}>
-              <p className="text-body-lg text-white/70">
-                Today, RLC Studio carries that same spirit forward — transforming
-                a community of gamers into a team of creators with a singular
-                focus: building games that matter.
-              </p>
+              <p className="text-body-lg text-white/70">{t.about.story3}</p>
             </ScrollReveal>
 
             {/* Timeline milestone */}
@@ -73,26 +63,26 @@ export default function About() {
                 <div className="grid grid-cols-3 gap-6">
                   <div>
                     <span className="text-display-lg text-white block mb-1">
-                      2021
+                      {t.about.timeline.year2021}
                     </span>
                     <span className="text-caption text-white/40">
-                      The beginning — BigBearTeam
+                      {t.about.timeline.year2021Desc}
                     </span>
                   </div>
                   <div>
                     <span className="text-display-lg text-white block mb-1">
-                      NOW
+                      {t.about.timeline.now}
                     </span>
                     <span className="text-caption text-white/40">
-                      RLC Studio — Building the future
+                      {t.about.timeline.nowDesc}
                     </span>
                   </div>
                   <div>
                     <span className="text-display-lg text-white block mb-1">
-                      NEXT
+                      {t.about.timeline.next}
                     </span>
                     <span className="text-caption text-white/40">
-                      Our first title
+                      {t.about.timeline.nextDesc}
                     </span>
                   </div>
                 </div>

@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import ScrollReveal from "../components/ScrollReveal";
 import SectionEyebrow from "../components/SectionEyebrow";
 import GhostButton from "../components/GhostButton";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export default function FutureGames() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="future"
@@ -48,7 +51,10 @@ export default function FutureGames() {
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-3xl mx-auto">
         <ScrollReveal>
-          <SectionEyebrow text="WHAT'S NEXT" className="mb-4 block" />
+          <SectionEyebrow
+            text={t.futureGames.eyebrow}
+            className="mb-4 block"
+          />
         </ScrollReveal>
 
         <ScrollReveal delay={0.15}>
@@ -61,8 +67,7 @@ export default function FutureGames() {
 
         <ScrollReveal delay={0.3}>
           <p className="text-body-lg text-white/60 max-w-xl mx-auto mb-8 sm:mb-10">
-            We&apos;re building worlds we can&apos;t wait to share. The first
-            title is in development — and it&apos;s just the beginning.
+            {t.futureGames.description}
           </p>
         </ScrollReveal>
 
@@ -72,10 +77,14 @@ export default function FutureGames() {
             <div className="w-12 h-px bg-white/20" />
             <motion.span
               animate={{ opacity: [0.4, 1, 0.4] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
               className="text-micro-cap text-white/70 tracking-[2px]"
             >
-              COMING SOON
+              {t.futureGames.comingSoon}
             </motion.span>
             <div className="w-12 h-px bg-white/20" />
           </div>
@@ -85,7 +94,7 @@ export default function FutureGames() {
         <ScrollReveal delay={0.6}>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <GhostButton href="#" onClick={() => {}}>
-              GET NOTIFIED
+              {t.futureGames.cta}
             </GhostButton>
           </div>
         </ScrollReveal>
@@ -93,7 +102,7 @@ export default function FutureGames() {
         {/* Bottom hint */}
         <ScrollReveal delay={0.75}>
           <p className="text-caption text-white/30 mt-10 sm:mt-12">
-            Follow our journey. The future of RLC starts here.
+            {t.futureGames.hint}
           </p>
         </ScrollReveal>
       </div>

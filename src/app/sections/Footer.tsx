@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Globe, MessageCircle, Video, Code2 } from "lucide-react";
 import ScrollReveal from "../components/ScrollReveal";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const socialLinks = [
   { icon: MessageCircle, label: "Twitter", href: "#" },
@@ -11,16 +12,17 @@ const socialLinks = [
   { icon: Code2, label: "GitHub", href: "#" },
 ];
 
-const footerLinks = [
-  { label: "HOME", href: "#hero" },
-  { label: "ABOUT", href: "#about" },
-  { label: "PHILOSOPHY", href: "#philosophy" },
-  { label: "TEAM", href: "#founders" },
-  { label: "GAMES", href: "#future" },
-];
-
 export default function Footer() {
+  const { t, language } = useLanguage();
   const currentYear = new Date().getFullYear();
+
+  const footerLinks = [
+    { label: t.nav.home, href: "#hero" },
+    { label: t.nav.about, href: "#about" },
+    { label: t.nav.philosophy, href: "#philosophy" },
+    { label: t.nav.team, href: "#founders" },
+    { label: t.nav.games, href: "#future" },
+  ];
 
   return (
     <footer className="relative bg-canvas-night border-t border-hairline-dark/30">
@@ -35,8 +37,7 @@ export default function Footer() {
                 className="h-6 w-auto object-contain mb-4"
               />
               <p className="text-caption text-white/40 max-w-xs">
-                An upcoming game studio built from passion, community, and the
-                belief that great games start with great people.
+                {t.footer.tagline}
               </p>
             </div>
           </ScrollReveal>
@@ -45,7 +46,7 @@ export default function Footer() {
           <ScrollReveal delay={0.1}>
             <div>
               <span className="text-micro-cap text-white/50 mb-4 block">
-                NAVIGATION
+                {t.footer.navigation}
               </span>
               <div className="flex flex-col gap-2">
                 {footerLinks.map((link) => (
@@ -65,7 +66,7 @@ export default function Footer() {
           <ScrollReveal delay={0.2}>
             <div>
               <span className="text-micro-cap text-white/50 mb-4 block">
-                CONNECT
+                {t.footer.connect}
               </span>
               <div className="flex items-center gap-3">
                 {socialLinks.map((social) => (
@@ -90,14 +91,24 @@ export default function Footer() {
         <ScrollReveal delay={0.3}>
           <div className="mt-12 pt-6 border-t border-hairline-dark/30 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-caption text-white/30">
-              &copy; {currentYear} RLC Studio. All rights reserved.
+              &copy; {currentYear} {t.footer.copyright}
             </p>
-            <p className="text-caption text-white/20">
-              Crafted with passion in Indonesia.
-            </p>
+            <p className="text-caption text-white/20">{t.footer.crafted}</p>
           </div>
         </ScrollReveal>
       </div>
+
+      {/* Hidden language alternate links for SEO */}
+      {language === "en" && (
+        <div className="hidden" aria-hidden="true">
+          <link rel="alternate" hrefLang="en" href="https://rlc.studio/" />
+          <link rel="alternate" hrefLang="id" href="https://rlc.studio/" />
+          <link rel="alternate" hrefLang="de" href="https://rlc.studio/" />
+          <link rel="alternate" hrefLang="ja" href="https://rlc.studio/" />
+          <link rel="alternate" hrefLang="ru" href="https://rlc.studio/" />
+          <link rel="alternate" hrefLang="x-default" href="https://rlc.studio/" />
+        </div>
+      )}
     </footer>
   );
 }

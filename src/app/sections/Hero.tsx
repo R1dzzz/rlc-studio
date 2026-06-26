@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import GhostButton from "../components/GhostButton";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="hero"
@@ -42,7 +45,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-micro-cap text-white/50 mb-4 sm:mb-5"
         >
-          UPCOMING GAME STUDIO
+          {t.hero.eyebrow}
         </motion.span>
 
         {/* Headline */}
@@ -52,7 +55,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-display-xxl text-white mb-6 sm:mb-8"
         >
-          WE ARE RLC
+          {t.hero.headline}
         </motion.h1>
 
         {/* Subtext */}
@@ -62,8 +65,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 1.0 }}
           className="text-body-lg text-white/70 max-w-xl mb-10 sm:mb-12"
         >
-          An upcoming game studio built from passion, community, and the belief
-          that great games start with great people.
+          {t.hero.subtext}
         </motion.p>
 
         {/* CTA */}
@@ -72,7 +74,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          <GhostButton href="#about">DISCOVER OUR STORY</GhostButton>
+          <GhostButton href="#about">{t.hero.cta}</GhostButton>
         </motion.div>
       </div>
 
@@ -83,7 +85,7 @@ export default function Hero() {
         transition={{ duration: 1, delay: 1.8 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-micro-cap text-white/40">SCROLL</span>
+        <span className="text-micro-cap text-white/40">{t.hero.scroll}</span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

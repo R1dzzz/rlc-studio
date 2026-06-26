@@ -2,29 +2,14 @@
 
 import ScrollReveal from "../components/ScrollReveal";
 import SectionEyebrow from "../components/SectionEyebrow";
+import { useLanguage } from "../i18n/LanguageContext";
 
-const pillars = [
-  {
-    letter: "R",
-    word: "RESONATE",
-    description:
-      "We create experiences that connect with players on a deeper level. Every pixel, every sound, every moment should feel meaningful and memorable.",
-  },
-  {
-    letter: "L",
-    word: "LIGHT",
-    description:
-      "We bring ideas to life. From the spark of imagination to the glow of a finished game, we illuminate the path from concept to reality.",
-  },
-  {
-    letter: "C",
-    word: "CREATE",
-    description:
-      "Creation is our core. We build worlds, craft stories, and forge experiences that leave a lasting impression on everyone who plays.",
-  },
-];
+const pillarKeys = ["resonate", "light", "create"] as const;
+const pillarLetters = ["R", "L", "C"] as const;
 
 export default function Philosophy() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="philosophy"
@@ -37,47 +22,48 @@ export default function Philosophy() {
         {/* Header */}
         <div className="text-center mb-16 sm:mb-20">
           <ScrollReveal>
-            <SectionEyebrow text="OUR PHILOSOPHY" className="mb-4 block" />
+            <SectionEyebrow
+              text={t.philosophy.eyebrow}
+              className="mb-4 block"
+            />
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
             <h2 className="text-display-xl text-white mb-5">
-              RESONATE. LIGHT. CREATE.
+              {t.philosophy.headline}
             </h2>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
             <p className="text-body-lg text-white/60 max-w-2xl mx-auto">
-              Three principles that guide everything we do at RLC Studio. These
-              are not just words — they are the foundation of every decision we
-              make.
+              {t.philosophy.intro}
             </p>
           </ScrollReveal>
         </div>
 
         {/* Pillars Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {pillars.map((pillar, index) => (
-            <ScrollReveal key={pillar.letter} delay={0.15 * (index + 1)}>
+          {pillarKeys.map((key, index) => (
+            <ScrollReveal key={key} delay={0.15 * (index + 1)}>
               <div className="group relative border border-hairline-dark/50 bg-white/[0.02] hover:bg-white/[0.04] transition-colors duration-500 p-8 sm:p-10">
                 {/* Letter */}
                 <span className="text-display-xxl text-white/10 group-hover:text-white/15 transition-colors duration-500 absolute top-4 right-6 select-none">
-                  {pillar.letter}
+                  {pillarLetters[index]}
                 </span>
 
                 {/* Content */}
                 <div className="relative z-10">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-micro-cap text-white/40 border border-hairline-dark/50 px-3 py-1">
-                      {pillar.letter}
+                      {pillarLetters[index]}
                     </span>
                     <span className="text-button-cap text-white">
-                      {pillar.word}
+                      {t.philosophy.pillars[key].word}
                     </span>
                   </div>
 
                   <p className="text-body-md text-white/60 leading-relaxed">
-                    {pillar.description}
+                    {t.philosophy.pillars[key].description}
                   </p>
                 </div>
 
@@ -92,11 +78,10 @@ export default function Philosophy() {
         <ScrollReveal delay={0.6}>
           <div className="mt-16 sm:mt-20 text-center">
             <blockquote className="text-body-lg text-white/50 italic max-w-3xl mx-auto">
-              &ldquo;We believe the best games are born from passion, shaped by
-              community, and crafted with purpose.&rdquo;
+              &ldquo;{t.philosophy.quote}&rdquo;
             </blockquote>
             <span className="text-micro-cap text-white/30 mt-4 block">
-              — RLC STUDIO
+              {t.philosophy.quoteAuthor}
             </span>
           </div>
         </ScrollReveal>

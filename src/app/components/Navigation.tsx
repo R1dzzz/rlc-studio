@@ -3,18 +3,21 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-
-const navLinks = [
-  { label: "HOME", href: "#hero" },
-  { label: "ABOUT", href: "#about" },
-  { label: "PHILOSOPHY", href: "#philosophy" },
-  { label: "TEAM", href: "#founders" },
-  { label: "GAMES", href: "#future" },
-];
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export default function Navigation() {
+  const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { label: t.nav.home, href: "#hero" },
+    { label: t.nav.about, href: "#about" },
+    { label: t.nav.philosophy, href: "#philosophy" },
+    { label: t.nav.team, href: "#founders" },
+    { label: t.nav.games, href: "#future" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,7 +65,7 @@ export default function Navigation() {
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8 lg:gap-10">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -72,20 +75,25 @@ export default function Navigation() {
                 {link.label}
               </a>
             ))}
+            <div className="w-px h-5 bg-white/20" />
+            <LanguageSwitcher />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden relative z-50 w-10 h-10 flex items-center justify-center"
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? (
-              <X className="w-5 h-5 text-white" />
-            ) : (
-              <Menu className="w-5 h-5 text-white" />
-            )}
-          </button>
+          {/* Mobile: Language Switcher + Menu Button */}
+          <div className="flex items-center gap-2 md:hidden">
+            <LanguageSwitcher />
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="relative z-50 w-10 h-10 flex items-center justify-center"
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? (
+                <X className="w-5 h-5 text-white" />
+              ) : (
+                <Menu className="w-5 h-5 text-white" />
+              )}
+            </button>
+          </div>
         </div>
       </motion.nav>
 

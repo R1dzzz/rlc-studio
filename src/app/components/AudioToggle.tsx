@@ -3,8 +3,10 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Volume2, VolumeX } from "lucide-react";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export default function AudioToggle() {
+  const { t } = useLanguage();
   const [isPlaying, setIsPlaying] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -64,8 +66,8 @@ export default function AudioToggle() {
           transition={{ duration: 0.3 }}
           onClick={toggleAudio}
           className="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full border border-white/30 bg-black/60 backdrop-blur-sm flex items-center justify-center text-white/80 hover:text-white hover:bg-black/80 hover:border-white/50 transition-all duration-300"
-          aria-label={isPlaying ? "Mute ambient audio" : "Play ambient audio"}
-          title={isPlaying ? "Mute ambient audio" : "Play ambient audio"}
+          aria-label={isPlaying ? t.audio.mute : t.audio.play}
+          title={isPlaying ? t.audio.mute : t.audio.play}
         >
           <AnimatePresence mode="wait">
             {isPlaying ? (
