@@ -127,6 +127,6 @@ export const en = {
     play: "Play ambient audio",
     mute: "Mute ambient audio",
   },
-} as const;
+};
 
 export type Translations = typeof en;
