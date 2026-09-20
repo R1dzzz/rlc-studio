@@ -1,0 +1,225 @@
+import type { Metadata, Viewport } from "next";
+import { Noto_Sans, Noto_Sans_Display } from "next/font/google";
+import "./globals.css";
+import { LanguageProvider } from "./i18n/LanguageContext";
+
+const notoSans = Noto_Sans({
+  variable: "--font-sans",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+});
+
+const notoSansDisplay = Noto_Sans_Display({
+  variable: "--font-display",
+  subsets: ["latin", "latin-ext"],
+  weight: ["700", "800"],
+  display: "swap",
+});
+
+export const viewport: Viewport = {
+  themeColor: "#111111",
+  colorScheme: "dark",
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://rlc.studio"),
+  title: {
+    default: "Dystancee Studio — Independent Game Studio",
+    template: "%s | Dystancee Studio",
+  },
+  description:
+    "Dystancee Studio is an independent game studio from Indonesia. From distance, we build worlds.",
+  keywords: [
+    "Dystancee Studio",
+    "indie game studio",
+    "game studio",
+    "independent games",
+    "game development",
+    "Indonesia game studio",
+    "upcoming games",
+    "video games",
+    "game developers",
+  ],
+  authors: [{ name: "Dystancee Studio" }],
+  creator: "Dystancee Studio",
+  publisher: "Dystancee Studio",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://rlc.studio",
+    languages: {
+      "en-US": "https://rlc.studio",
+      "id-ID": "https://rlc.studio",
+      "de-DE": "https://rlc.studio",
+      "ja-JP": "https://rlc.studio",
+      "ru-RU": "https://rlc.studio",
+    },
+  },
+  openGraph: {
+    title: "Dystancee Studio — Independent Game Studio",
+    description:
+      "Independent game studio from Indonesia. From distance, we build worlds.",
+    url: "https://rlc.studio",
+    siteName: "Dystancee Studio",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/images/dystancee-mark.svg",
+        width: 1200,
+        height: 630,
+        alt: "Dystancee Studio — From distance, we build worlds.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dystancee Studio — Independent Game Studio",
+    description:
+      "Independent game studio from Indonesia. From distance, we build worlds.",
+    images: ["/images/dystancee-mark.svg"],
+  },
+  category: "games",
+  classification: "Game Studio, Indie Games, Video Game Development",
+  verification: {
+    google: "verification_token",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/images/dystancee-mark.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/images/dystancee-mark.svg", sizes: "180x180", type: "image/svg+xml" }],
+    other: [{ rel: "mask-icon", url: "/images/dystancee-mark.svg" }],
+  },
+  manifest: "/site.webmanifest",
+  other: {
+    "msapplication-TileColor": "#111111",
+    "msapplication-TileImage": "/images/dystancee-mark.svg",
+    "msapplication-config": "/browserconfig.xml",
+  },
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://rlc.studio/#organization",
+      name: "Dystancee Studio",
+      alternateName: ["Dystancee"],
+      url: "https://rlc.studio",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://rlc.studio/images/dystancee-mark.svg",
+        width: 512,
+        height: 512,
+      },
+      description:
+        "Dystancee Studio is an independent game studio from Indonesia. From distance, we build worlds.",
+      foundingDate: "2021-10-19",
+      slogan: "From distance, we build worlds.",
+      areaServed: "Worldwide",
+      knowsAbout: [
+        "Game Development",
+        "Indie Games",
+        "Video Games",
+        "Game Design",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://rlc.studio/#website",
+      url: "https://rlc.studio",
+      name: "Dystancee Studio",
+      description: "Independent Game Studio — From distance, we build worlds.",
+      publisher: {
+        "@id": "https://rlc.studio/#organization",
+      },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: "https://rlc.studio/search?q={search_term_string}",
+        },
+        "query-input": "required name=search_term_string",
+      },
+      inLanguage: ["en", "id", "de", "ja", "ru"],
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://rlc.studio/#webpage",
+      url: "https://rlc.studio",
+      name: "Dystancee Studio — Independent Game Studio",
+      isPartOf: {
+        "@id": "https://rlc.studio/#website",
+      },
+      about: {
+        "@id": "https://rlc.studio/#organization",
+      },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: "https://rlc.studio/images/dystancee-mark.svg",
+      },
+      description:
+        "Dystancee Studio is an independent game studio from Indonesia. From distance, we build worlds.",
+      inLanguage: "en",
+    },
+    {
+      "@type": "VideoGame",
+      name: "Dystancee Studio Upcoming Title",
+      description:
+        "The next title from Dystancee Studio is in development.",
+      url: "https://rlc.studio",
+      author: {
+        "@id": "https://rlc.studio/#organization",
+      },
+      publisher: {
+        "@id": "https://rlc.studio/#organization",
+      },
+      genre: ["Indie", "Adventure"],
+      gamePlatform: ["PC", "Console"],
+      applicationCategory: "Game",
+      operatingSystem: ["Windows", "macOS", "Linux"],
+      inLanguage: ["en", "id", "de", "ja", "ru"],
+    },
+  ],
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang="en"
+      className={`${notoSans.variable} ${notoSansDisplay.variable} antialiased`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
+      </head>
+      <body className="min-h-screen bg-[#111111] text-white">
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
+    </html>
+  );
+}
