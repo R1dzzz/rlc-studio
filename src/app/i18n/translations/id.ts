@@ -1,114 +1,111 @@
-import type { Translations } from "./en";
-
-export const id: Translations = {
+export const en = {
   nav: {
-    home: "BERANDA",
-    about: "TENTANG",
-    philosophy: "FILOSOFI",
-    team: "TIM",
-    games: "PERMAINAN",
+    home: "HOME",
+    about: "ABOUT",
+    philosophy: "PHILOSOPHY",
+    team: "TEAM",
+    games: "GAMES",
   },
 
   hero: {
-    eyebrow: "STUDIO GAME MENDATANG",
-    headline: "KAMI ADALAH RLC",
+    eyebrow: "INDEPENDENT GAME STUDIO",
+    headline: "WE ARE DYSTANCEE",
     subtext:
-      "Sebuah studio game yang akan datang, dibangun dari passion, komunitas, dan keyakinan bahwa game yang hebat dimulai dari orang-orang hebat.",
-    cta: "TEMUKAN CERITA KAMI",
-    scroll: "GULIR",
+      "An independent game studio from Indonesia. From distance, we build worlds.",
+    cta: "DISCOVER OUR STORY",
+    scroll: "SCROLL",
   },
 
   about: {
-    eyebrow: "ASAL USUL KAMI",
-    headline: "DARI KELOMPOK KECIL MENJADI STUDIO",
-    estDate: "DIDIRIKAN 19 OKTOBER 2021",
+    eyebrow: "OUR ORIGIN",
+    headline: "FROM A SMALL GROUP TO A STUDIO",
+    estDate: "EST. OCTOBER 19, 2021",
     story1:
-      "Setiap studio punya asal muasal. Kami dimulai pada 19 Oktober 2021 — bukan di ruang rapat, tapi di grup chat sederhana teman-teman yang suka bermain Minecraft bersama. Kami menyebut diri BigBearTeam.",
+      "Every studio has a beginning. Ours started with a small group of friends who loved building worlds together. The energy was simple, direct, and honest.",
     story2:
-      "Yang dimulai sebagai sesi gaming santai berkembang menjadi sesuatu yang lebih dalam. Percakapan beralih dari bermain game ke membuat game. Ide berubah menjadi rencana. Passion bersama menjadi visi bersama.",
+      "What started as a shared passion became a design practice. Conversations moved from play into craft. Ideas became structure. A community became a studio.",
     story3:
-      "Hari ini, RLC Studio membawa semangat yang sama — mengubah komunitas gamer menjadi tim kreator dengan fokus tunggal: membangun game yang bermakna.",
+      "Dystancee Studio carries that same spirit forward. RLC was the beginning. Dystancee is the next stage.",
     timeline: {
       year2021: "2021",
-      year2021Desc: "Awal mula — BigBearTeam",
-      now: "SEKARANG",
-      nowDesc: "RLC Studio — Membangun masa depan",
-      next: "SELANJUTNYA",
-      nextDesc: "Judul pertama kami",
+      year2021Desc: "The beginning — RLC",
+      now: "NOW",
+      nowDesc: "Dystancee Studio — Building the future",
+      next: "NEXT",
+      nextDesc: "Our next title",
     },
   },
 
   philosophy: {
-    eyebrow: "FILOSOFI KAMI",
-    headline: "RESONATE. LIGHT. CREATE.",
+    eyebrow: "OUR PHILOSOPHY",
+    headline: "FROM DISTANCE, WE BUILD WORLDS.",
     intro:
-      "Tiga prinsip yang memandu segala sesuatu yang kami lakukan di RLC Studio. Ini bukan sekadar kata-kata — mereka adalah fondasi dari setiap keputusan yang kami buat.",
+      "RLC was the beginning. Dystancee is the next stage. We still build with the same intent: honest craft, clear focus, and worlds worth inhabiting.",
     pillars: {
       resonate: {
         word: "RESONATE",
         description:
-          "Kami menciptakan pengalaman yang terhubung dengan para pemain di level yang lebih dalam. Setiap piksel, setiap suara, setiap momen harus terasa bermakna dan berkesan.",
+          "We build experiences that land with intention. Every detail should earn its place and hold meaning.",
       },
       light: {
         word: "LIGHT",
         description:
-          "Kami menghidupkan ide-ide. Dari percikan imajinasi hingga cahaya game yang selesai, kami menerangi jalan dari konsep ke realitas.",
+          "We shape ideas into a clear point of view. From concept to finished world, the work should feel considered and alive.",
       },
       create: {
         word: "CREATE",
         description:
-          "Penciptaan adalah inti kami. Kami membangun dunia, menciptakan cerita, dan menempa pengalaman yang meninggalkan kesan mendalam pada setiap orang yang bermain.",
+          "Creation is our work. We build worlds, stories, and mechanics that leave a lasting impression without excess.",
       },
     },
     quote:
-      "Kami percaya game terbaik lahir dari passion, dibentuk oleh komunitas, dan dibuat dengan tujuan.",
-    quoteAuthor: "— RLC STUDIO",
+      "We build with intent. The work speaks for itself.",
+    quoteAuthor: "— DYSTANCEE STUDIO",
   },
 
   founders: {
-    eyebrow: "TIM KAMI",
-    headline: "KENALI PARA PENDIRI",
+    eyebrow: "THE TEAM",
+    headline: "MEET THE FOUNDERS",
     farid: {
       name: "FARID ALFIYANSAH",
-      role: "PENDIRI & KEPALA VISI",
+      role: "FOUNDER & CHIEF VISIONARY",
       description:
-        "Arsitek visi RLC. Farid mengubah komunitas gaming kecil menjadi studio dengan tujuan, memimpin setiap langkah perjalanan dari konsep ke penciptaan.",
+        "The architect of the studio's direction. Farid shaped a small community into a focused creative practice and carried it into the next chapter.",
     },
     halim: {
       name: "HALIM",
-      role: "CO-PENDIRI & DIREKTUR KREATIF",
+      role: "CO-FOUNDER & CREATIVE DIRECTOR",
       description:
-        "Kekuatan pendiri di balik identitas kreatif RLC. Halim membawa sensibilitas artistik dan pemikiran desain yang membentuk suara visual dan pengalaman studio.",
+        "A guiding force in the studio's creative identity. Halim brings the visual and thematic clarity that shapes how the work is felt.",
     },
     fauzan: {
       name: "FAUZAN YUSUF PRATAMA",
-      role: "CO-PENDIRI & DIREKTUR TEKNIS",
+      role: "CO-FOUNDER & TECHNICAL DIRECTOR",
       description:
-        "Tulang punggung teknis ambisi RLC. Fauzan mendorong visi rekayasa yang mengubah mimpi kreatif menjadi realitas yang dapat dimainkan.",
+        "The technical backbone of the studio's ambition. Fauzan turns direction into playable realities with discipline and clarity.",
     },
   },
 
   futureGames: {
-    eyebrow: "APA YANG SELANJUTNYA",
-    headline: "SESUATU AKAN DATANG",
+    eyebrow: "WHAT'S NEXT",
+    headline: "SOMETHING IS COMING",
     description:
-      "Kami sedang membangun dunia yang tak sabar ingin kami bagikan. Judul pertama sedang dalam pengembangan — dan ini baru permulaan.",
-    comingSoon: "SEGERA HADIR",
-    cta: "DAPATKAN NOTIFIKASI",
-    hint: "Ikuti perjalanan kami. Masa depan RLC dimulai di sini.",
+      "We are building worlds that deserve attention. The first title is in development, and it is only the beginning.",
+    comingSoon: "COMING SOON",
+    cta: "GET NOTIFIED",
+    hint: "Follow our journey. Dystancee begins here.",
   },
 
   footer: {
-    tagline:
-      "Sebuah studio game yang akan datang, dibangun dari passion, komunitas, dan keyakinan bahwa game yang hebat dimulai dari orang-orang hebat.",
-    navigation: "NAVIGASI",
-    connect: "TERHUBUNG",
-    copyright: "RLC Studio. Hak cipta dilindungi.",
-    crafted: "Dibuat dengan passion di Indonesia.",
+    tagline: "From distance, we build worlds.",
+    navigation: "NAVIGATION",
+    connect: "CONNECT",
+    copyright: "Dystancee Studio. All rights reserved.",
+    crafted: "Built in Indonesia.",
   },
 
   language: {
-    title: "Bahasa",
+    title: "Language",
     en: "English",
     id: "Bahasa Indonesia",
     de: "Deutsch",
@@ -117,7 +114,9 @@ export const id: Translations = {
   },
 
   audio: {
-    play: "Putar audio ambient",
-    mute: "Matikan audio ambient",
+    play: "Play ambient audio",
+    mute: "Mute ambient audio",
   },
 };
+
+export type Translations = typeof en;
