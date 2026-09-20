@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "../i18n/LanguageContext";
@@ -10,7 +10,6 @@ export default function Navigation() {
   const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
   const navLinks = [
     { label: t.nav.home, href: "#hero" },
     { label: t.nav.about, href: "#about" },
@@ -20,111 +19,46 @@ export default function Navigation() {
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > window.innerHeight * 0.8);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
-
-  const handleLinkClick = () => {
-    setMenuOpen(false);
-  };
 
   return (
     <>
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-black/90 backdrop-blur-md border-b border-hairline-dark/50"
-            : "bg-transparent"
-        }`}
-      >
-        <div className="flex items-center justify-between px-6 sm:px-8 lg:px-12 py-5 lg:py-6">
-          {/* Logo */}
-          <a href="#hero" className="relative z-50">
-            <img
-              src="/images/rlc-light3.png"
-              alt="RLC Games"
-              className="h-6 sm:h-7 w-auto object-contain"
-            />
+      <motion.nav initial={{ y: -24 }} animate={{ y: 0 }} className={`fixed inset-x-0 top-0 z-50 border-b border-[#FFFFFF] transition-colors duration-300 ${scrolled ? "bg-[#111111]" : "bg-[#111111]"}`} aria-label="Primary navigation">
+        <div className="mx-auto flex max-w-[1280px] items-center justify-between px-6 py-5 sm:px-8 lg:px-12">
+          <a href="#hero" className="relative z-50 flex items-center gap-3" aria-label="Dystancee Studio home">
+            <img src="/images/dystancee.png" alt="Dystancee Studio" className="h-8 w-8 object-contain" />
+            <span className="text-button-cap">Dystancee Studio</span>
           </a>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-micro-cap text-white/70 hover:text-white transition-colors duration-300"
-              >
-                {link.label}
-              </a>
-            ))}
-            <div className="w-px h-5 bg-white/20" />
+          <div className="hidden items-center gap-8 md:flex">
+            {navLinks.map((link) => <a key={link.href} href={link.href} className="text-micro-cap hover:underline">{link.label}</a>)}
+            <span className="h-5 w-px bg-[#FFFFFF]" />
             <LanguageSwitcher />
           </div>
 
-          {/* Mobile: Language Switcher + Menu Button */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-3 md:hidden">
             <LanguageSwitcher />
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="relative z-50 w-10 h-10 flex items-center justify-center"
-              aria-label="Toggle menu"
-            >
-              {menuOpen ? (
-                <X className="w-5 h-5 text-white" />
-              ) : (
-                <Menu className="w-5 h-5 text-white" />
-              )}
+            <button type="button" onClick={() => setMenuOpen((open) => !open)} className="relative z-50 flex h-10 w-10 items-center justify-center" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen}>
+              {menuOpen ? <X /> : <Menu />}
             </button>
           </div>
         </div>
       </motion.nav>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-black flex flex-col items-center justify-center md:hidden"
-          >
-            <div className="flex flex-col items-center gap-8">
-              {navLinks.map((link, index) => (
-                <motion.a
-                  key={link.href}
-                  href={link.href}
-                  onClick={handleLinkClick}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 20 }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="text-display-lg text-white hover:text-white/80 transition-colors"
-                >
-                  {link.label}
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
-        )}
+        {menuOpen && <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-40 flex items-center justify-center bg-[#111111] md:hidden">
+          <div className="flex flex-col gap-8 text-center">
+            {navLinks.map((link) => <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)} className="text-display-lg">{link.label}</a>)}
+          </div>
+        </motion.div>}
       </AnimatePresence>
     </>
   );

@@ -6,89 +6,23 @@ import { useLanguage } from "../i18n/LanguageContext";
 
 export default function About() {
   const { t } = useLanguage();
-
   return (
-    <section
-      id="about"
-      className="relative min-h-screen flex items-center bg-canvas-night py-24 sm:py-32"
-    >
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-canvas-night via-canvas-night-soft to-canvas-night opacity-50" />
-
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          {/* Left column — Label and headline */}
-          <div className="lg:sticky lg:top-32">
-            <ScrollReveal>
-              <SectionEyebrow text={t.about.eyebrow} className="mb-4 block" />
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.1}>
-              <h2 className="text-display-xl text-white mb-6">
-                FROM A SMALL
-                <br />
-                GROUP TO A
-                <br />
-                STUDIO
-              </h2>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <div className="flex items-center gap-4 mt-8">
-                <div className="w-12 h-px bg-white/30" />
-                <span className="text-micro-cap text-white/40">
-                  {t.about.estDate}
-                </span>
-              </div>
-            </ScrollReveal>
+    <section id="about" className="bg-[#111111] px-6 py-28 sm:px-8 lg:px-12 lg:py-40">
+      <div className="mx-auto grid w-full max-w-[1280px] gap-16 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+        <div className="lg:sticky lg:top-32 lg:self-start">
+          <ScrollReveal><SectionEyebrow text={t.about.eyebrow} className="mb-6 block" /></ScrollReveal>
+          <ScrollReveal delay={0.1}><h2 className="text-display-xl max-w-xl">{t.about.headline}</h2></ScrollReveal>
+          <ScrollReveal delay={0.2}><p className="text-micro-cap mt-8">{t.about.estDate}</p></ScrollReveal>
+        </div>
+        <div>
+          <div className="space-y-8">
+            {[t.about.story1, t.about.story2, t.about.story3].map((story, index) => <ScrollReveal key={story} delay={0.1 * index}><p className="text-body-lg max-w-2xl">{story}</p></ScrollReveal>)}
           </div>
-
-          {/* Right column — Story */}
-          <div className="space-y-6">
-            <ScrollReveal delay={0.15}>
-              <p className="text-body-lg text-white/70">{t.about.story1}</p>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.25}>
-              <p className="text-body-lg text-white/70">{t.about.story2}</p>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.35}>
-              <p className="text-body-lg text-white/70">{t.about.story3}</p>
-            </ScrollReveal>
-
-            {/* Timeline milestone */}
-            <ScrollReveal delay={0.45}>
-              <div className="mt-10 pt-8 border-t border-hairline-dark">
-                <div className="grid grid-cols-3 gap-6">
-                  <div>
-                    <span className="text-display-lg text-white block mb-1">
-                      {t.about.timeline.year2021}
-                    </span>
-                    <span className="text-caption text-white/40">
-                      {t.about.timeline.year2021Desc}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-display-lg text-white block mb-1">
-                      {t.about.timeline.now}
-                    </span>
-                    <span className="text-caption text-white/40">
-                      {t.about.timeline.nowDesc}
-                    </span>
-                  </div>
-                  <div>
-                    <span className="text-display-lg text-white block mb-1">
-                      {t.about.timeline.next}
-                    </span>
-                    <span className="text-caption text-white/40">
-                      {t.about.timeline.nextDesc}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
+          <ScrollReveal delay={0.35}>
+            <div className="mt-16 grid grid-cols-1 border-t border-[#FFFFFF] pt-8 sm:grid-cols-3 sm:gap-8">
+              {[t.about.timeline.year2021, t.about.timeline.now, t.about.timeline.next].map((item, index) => <div key={item} className="border-b border-[#FFFFFF] py-5 last:border-b-0 sm:border-b-0 sm:border-l sm:pl-5 first:sm:border-l-0 first:sm:pl-0"><span className="text-display-lg block">{item}</span><span className="text-caption block mt-2">{[t.about.timeline.year2021Desc, t.about.timeline.nowDesc, t.about.timeline.nextDesc][index]}</span></div>)}
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

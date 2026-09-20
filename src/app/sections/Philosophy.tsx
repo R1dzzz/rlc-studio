@@ -5,86 +5,21 @@ import SectionEyebrow from "../components/SectionEyebrow";
 import { useLanguage } from "../i18n/LanguageContext";
 
 const pillarKeys = ["resonate", "light", "create"] as const;
-const pillarLetters = ["R", "L", "C"] as const;
 
 export default function Philosophy() {
   const { t } = useLanguage();
-
   return (
-    <section
-      id="philosophy"
-      className="relative min-h-screen flex items-center bg-canvas-night py-24 sm:py-32"
-    >
-      {/* Subtle background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-canvas-night via-canvas-night-soft/30 to-canvas-night" />
-
-      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
-        {/* Header */}
-        <div className="text-center mb-16 sm:mb-20">
-          <ScrollReveal>
-            <SectionEyebrow
-              text={t.philosophy.eyebrow}
-              className="mb-4 block"
-            />
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.1}>
-            <h2 className="text-display-xl text-white mb-5">
-              {t.philosophy.headline}
-            </h2>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.2}>
-            <p className="text-body-lg text-white/60 max-w-2xl mx-auto">
-              {t.philosophy.intro}
-            </p>
-          </ScrollReveal>
+    <section id="philosophy" className="bg-[#FFFFFF] px-6 py-28 text-[#111111] sm:px-8 lg:px-12 lg:py-40">
+      <div className="mx-auto w-full max-w-[1280px]">
+        <div className="max-w-3xl">
+          <ScrollReveal><SectionEyebrow text={t.philosophy.eyebrow} className="mb-6 block" /></ScrollReveal>
+          <ScrollReveal delay={0.1}><h2 className="text-display-xl mb-6">{t.philosophy.headline}</h2></ScrollReveal>
+          <ScrollReveal delay={0.2}><p className="text-body-lg max-w-2xl">{t.philosophy.intro}</p></ScrollReveal>
         </div>
-
-        {/* Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {pillarKeys.map((key, index) => (
-            <ScrollReveal key={key} delay={0.15 * (index + 1)}>
-              <div className="group relative border border-hairline-dark/50 bg-white/[0.02] hover:bg-white/[0.04] transition-colors duration-500 p-8 sm:p-10">
-                {/* Letter */}
-                <span className="text-display-xxl text-white/10 group-hover:text-white/15 transition-colors duration-500 absolute top-4 right-6 select-none">
-                  {pillarLetters[index]}
-                </span>
-
-                {/* Content */}
-                <div className="relative z-10">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-micro-cap text-white/40 border border-hairline-dark/50 px-3 py-1">
-                      {pillarLetters[index]}
-                    </span>
-                    <span className="text-button-cap text-white">
-                      {t.philosophy.pillars[key].word}
-                    </span>
-                  </div>
-
-                  <p className="text-body-md text-white/60 leading-relaxed">
-                    {t.philosophy.pillars[key].description}
-                  </p>
-                </div>
-
-                {/* Bottom accent line */}
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
-              </div>
-            </ScrollReveal>
-          ))}
+        <div className="mt-20 grid gap-0 border-t border-[#111111] md:grid-cols-3">
+          {pillarKeys.map((key, index) => <ScrollReveal key={key} delay={0.1 * index}><article className="border-b border-[#111111] py-8 md:min-h-72 md:border-b-0 md:border-r md:px-8 md:first:pl-0 md:last:border-r-0"><span className="text-micro-cap block mb-12">0{index + 1}</span><h3 className="text-display-lg mb-5">{t.philosophy.pillars[key].word}</h3><p className="text-body-md max-w-sm">{t.philosophy.pillars[key].description}</p></article></ScrollReveal>)}
         </div>
-
-        {/* Bottom quote */}
-        <ScrollReveal delay={0.6}>
-          <div className="mt-16 sm:mt-20 text-center">
-            <blockquote className="text-body-lg text-white/50 italic max-w-3xl mx-auto">
-              &ldquo;{t.philosophy.quote}&rdquo;
-            </blockquote>
-            <span className="text-micro-cap text-white/30 mt-4 block">
-              {t.philosophy.quoteAuthor}
-            </span>
-          </div>
-        </ScrollReveal>
+        <ScrollReveal delay={0.35}><blockquote className="text-display-lg mt-20 max-w-3xl">“{t.philosophy.quote}”<footer className="text-micro-cap mt-6">{t.philosophy.quoteAuthor}</footer></blockquote></ScrollReveal>
       </div>
     </section>
   );
