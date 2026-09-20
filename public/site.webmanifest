@@ -1,36 +1,122 @@
-{
-  "name": "RLC Studio",
-  "short_name": "RLC Studio",
-  "description": "RLC Studio is an upcoming game studio built from passion, community, and the belief that great games start with great people.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
-  "orientation": "portrait-primary",
-  "scope": "/",
-  "lang": "en",
-  "icons": [
-    {
-      "src": "/images/rlc-light1.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+import type { Translations } from "./en";
+
+export const ru: Translations = {
+  nav: {
+    home: "ГЛАВНАЯ",
+    about: "О НАС",
+    philosophy: "ФИЛОСОФИЯ",
+    team: "КОМАНДА",
+    games: "ИГРЫ",
+  },
+
+  hero: {
+    eyebrow: "НЕЗАВИСИМАЯ ИГРОВАЯ СТУДИЯ",
+    headline: "МЫ — DYSTANCEE",
+    subtext:
+      "Независимая игровая студия из Индонезии. На расстоянии мы создаём миры.",
+    cta: "УЗНАЙТЕ НАШУ ИСТОРИЮ",
+    scroll: "ПРОКРУТКА",
+  },
+
+  about: {
+    eyebrow: "НАШЕ НАЧАЛО",
+    headline: "ОТ НЕБОЛЬШОЙ ГРУППЫ ДО СТУДИИ",
+    estDate: "ОСН. 19 ОКТЯБРЯ 2021",
+    story1:
+      "У каждой студии есть начало. Наше началось с небольшой группы друзей, которые хотели создавать миры вместе. Энергия была простой, прямой и честной.",
+    story2:
+      "То, что начиналось как общая страсть, стало практикой дизайна. Разговоры сместились от игры к ремеслу. Идеи превратились в структуру. Сообщество стало студией.",
+    story3:
+      "Dystancee Studio сохраняет тот же дух. RLC было началом. Dystancee — следующий этап.",
+    timeline: {
+      year2021: "2021",
+      year2021Desc: "Начало — RLC",
+      now: "СЕЙЧАС",
+      nowDesc: "Dystancee Studio — Строим будущее",
+      next: "ДАЛЬШЕ",
+      nextDesc: "Наш следующий проект",
     },
-    {
-      "src": "/images/rlc-light1.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ],
-  "categories": ["games", "entertainment"],
-  "screenshots": [
-    {
-      "src": "/images/hero-bg.jpg",
-      "sizes": "1280x720",
-      "type": "image/jpeg",
-      "form_factor": "wide",
-      "label": "RLC Studio Hero Section"
-    }
-  ]
-}
+  },
+
+  philosophy: {
+    eyebrow: "НАША ФИЛОСОФИЯ",
+    headline: "НА РАССТОЯНИИ МЫ СТРОИМ МИРЫ.",
+    intro:
+      "RLC было началом. Dystancee — следующий этап. Мы продолжаем строить с тем же намерением: честное мастерство, ясная фокусировка и миры, которыми стоит жить.",
+    pillars: {
+      resonate: {
+        word: "RESONATE",
+        description:
+          "Мы создаём впечатления с намерением. Каждая деталь должна заслужить своё место и нести смысл.",
+      },
+      light: {
+        word: "LIGHT",
+        description:
+          "Мы превращаем идеи в ясную точку зрения. От концепции до готового мира работа должна быть продуманной и живой.",
+      },
+      create: {
+        word: "CREATE",
+        description:
+          "Созидание — наша работа. Мы строим миры, истории и механики, которые оставляют сильное впечатление без лишнего.",
+      },
+    },
+    quote:
+      "Мы строим с намерением. Работа говорит сама за себя.",
+    quoteAuthor: "— DYSTANCEE STUDIO",
+  },
+
+  founders: {
+    eyebrow: "КОМАНДА",
+    headline: "ПОЗНАКОМЬТЕСЬ С ОСНОВАТЕЛЯМИ",
+    farid: {
+      name: "FARID ALFIYANSAH",
+      role: "ОСНОВАТЕЛЬ И ГЛАВНЫЙ ВИЗИОНЕР",
+      description:
+        "Архитектор направления студии. Фарид превратил небольшое сообщество в целенаправленную творческую практику и вывел её в следующий этап.",
+    },
+    halim: {
+      name: "HALIM",
+      role: "СООСНОВАТЕЛЬ И КРЕАТИВНЫЙ ДИРЕКТОР",
+      description:
+        "Опорная сила в творческой идентичности студии. Халим привносит визуальную ясность и тематическое понимание, формируя ощущение работы.",
+    },
+    fauzan: {
+      name: "FAUZAN YUSUF PRATAMA",
+      role: "СООСНОВАТЕЛЬ И ТЕХНИЧЕСКИЙ ДИРЕКТОР",
+      description:
+        "Техническая основа амбиций студии. Фаузан превращает направление в играбельную реальность с дисциплиной и ясностью.",
+    },
+  },
+
+  futureGames: {
+    eyebrow: "ЧТО ДАЛЬШЕ",
+    headline: "ЧТО-ТО ГОТОВИТСЯ",
+    description:
+      "Мы строим миры, которым стоит уделить внимание. Первый проект находится в разработке — и это только начало.",
+    comingSoon: "СКОРО",
+    cta: "ПОЛУЧИТЬ УВЕДОМЛЕНИЕ",
+    hint: "Следите за нашим путём. Dystancee начинается здесь.",
+  },
+
+  footer: {
+    tagline: "На расстоянии мы строим миры.",
+    navigation: "НАВИГАЦИЯ",
+    connect: "СВЯЗАТЬСЯ",
+    copyright: "Dystancee Studio. Все права защищены.",
+    crafted: "Создано в Индонезии.",
+  },
+
+  language: {
+    title: "Язык",
+    en: "English",
+    id: "Bahasa Indonesia",
+    de: "Deutsch",
+    ja: "日本語",
+    ru: "Русский",
+  },
+
+  audio: {
+    play: "Включить фоновое аудио",
+    mute: "Выключить фоновое аудио",
+  },
+};

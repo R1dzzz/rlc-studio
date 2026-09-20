@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+  <msapplication>
+    <tile>
+      <square70x70logo src="/images/dystancee-mark.svg"/>
+      <square150x150logo src="/images/dystancee-mark.svg"/>
+      <square310x310logo src="/images/dystancee-mark.svg"/>
+      <TileColor>#111111</TileColor>
+    </tile>
+  </msapplication>
+</browserconfig>

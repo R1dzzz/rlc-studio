@@ -1,0 +1,122 @@
+import type { Translations } from "./en";
+
+export const id: Translations = {
+  nav: {
+    home: "BERANDA",
+    about: "TENTANG",
+    philosophy: "FILOSOFI",
+    team: "TIM",
+    games: "PERMAINAN",
+  },
+
+  hero: {
+    eyebrow: "STUDIO GAME MANDIRI",
+    headline: "KAMI ADALAH DYSTANCEE",
+    subtext:
+      "Sebuah studio game independen dari Indonesia. Dari jarak, kami membangun dunia.",
+    cta: "TEMUKAN CERITA KAMI",
+    scroll: "GULIR",
+  },
+
+  about: {
+    eyebrow: "ASAL USUL KAMI",
+    headline: "DARI KELOMPOK KECIL MENJADI STUDIO",
+    estDate: "DIDIRIKAN 19 OKTOBER 2021",
+    story1:
+      "Setiap studio punya awalnya. Kami dimulai dari sekelompok teman yang menyukai dunia yang dibangun bersama. Energinya sederhana, langsung, dan jujur.",
+    story2:
+      "Yang dimulai sebagai passion bersama menjadi praktik desain. Percakapan bergeser dari bermain ke pembuatan. Ide menjadi struktur. Komunitas menjadi studio.",
+    story3:
+      "Dystancee Studio membawa semangat yang sama. RLC adalah awalnya. Dystancee adalah tahap berikutnya.",
+    timeline: {
+      year2021: "2021",
+      year2021Desc: "Awal mula — RLC",
+      now: "SEKARANG",
+      nowDesc: "Dystancee Studio — Membangun masa depan",
+      next: "SELANJUTNYA",
+      nextDesc: "Judul berikutnya",
+    },
+  },
+
+  philosophy: {
+    eyebrow: "FILOSOFI KAMI",
+    headline: "DARI JARAK, KAMI MEMBANGUN DUNIA.",
+    intro:
+      "RLC adalah awalnya. Dystancee adalah tahap berikutnya. Kami tetap membangun dengan niat yang sama: karya yang jujur, fokus yang jelas, dan dunia yang layak dihuni.",
+    pillars: {
+      resonate: {
+        word: "RESONATE",
+        description:
+          "Kami menciptakan pengalaman yang berdampak dengan niat. Setiap detail harus mendapat tempatnya dan membawa makna.",
+      },
+      light: {
+        word: "LIGHT",
+        description:
+          "Kami mengubah ide menjadi sudut pandang yang jelas. Dari konsep hingga dunia yang selesai, hasilnya harus terlihat dipikirkan dan hidup.",
+      },
+      create: {
+        word: "CREATE",
+        description:
+          "Penciptaan adalah pekerjaan kami. Kami membangun dunia, cerita, dan mekanika yang meninggalkan kesan tanpa berlebihan.",
+      },
+    },
+    quote:
+      "Kami membangun dengan niat. Karya berbicara sendiri.",
+    quoteAuthor: "— DYSTANCEE STUDIO",
+  },
+
+  founders: {
+    eyebrow: "TIM KAMI",
+    headline: "KENALI PARA PENDIRI",
+    farid: {
+      name: "FARID ALFIYANSAH",
+      role: "PENDIRI & KEPALA VISI",
+      description:
+        "Arsitek arah studio. Farid mengubah komunitas kecil menjadi praktik kreatif yang fokus dan membawa langkah ke babak berikutnya.",
+    },
+    halim: {
+      name: "HALIM",
+      role: "CO-PENDIRI & DIREKTUR KREATIF",
+      description:
+        "Kekuatan penting dalam identitas kreatif studio. Halim membawa kejelasan visual dan tematik yang membentuk bagaimana karya terasa.",
+    },
+    fauzan: {
+      name: "FAUZAN YUSUF PRATAMA",
+      role: "CO-PENDIRI & DIREKTUR TEKNIS",
+      description:
+        "Tulang punggung teknis ambisi studio. Fauzan mengubah arah menjadi realitas yang dapat dimainkan dengan disiplin dan kejelasan.",
+    },
+  },
+
+  futureGames: {
+    eyebrow: "APA YANG SELANJUTNYA",
+    headline: "SESUATU AKAN DATANG",
+    description:
+      "Kami sedang membangun dunia yang layak mendapat perhatian. Judul pertama sedang dalam pengembangan, dan ini baru permulaan.",
+    comingSoon: "SEGERA HADIR",
+    cta: "DAPATKAN NOTIFIKASI",
+    hint: "Ikuti perjalanan kami. Dystancee dimulai di sini.",
+  },
+
+  footer: {
+    tagline: "Dari jarak, kami membangun dunia.",
+    navigation: "NAVIGASI",
+    connect: "TERHUBUNG",
+    copyright: "Dystancee Studio. Hak cipta dilindungi.",
+    crafted: "Dibuat di Indonesia.",
+  },
+
+  language: {
+    title: "Bahasa",
+    en: "English",
+    id: "Bahasa Indonesia",
+    de: "Deutsch",
+    ja: "日本語",
+    ru: "Русский",
+  },
+
+  audio: {
+    play: "Putar audio ambient",
+    mute: "Matikan audio ambient",
+  },
+};
